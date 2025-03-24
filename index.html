@@ -22,11 +22,16 @@
             background-color: #fff;
         }
         
+        /* Consistent section spacing */
+        section {
+            margin-bottom: 4rem;
+        }
+        
         .header-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--light-text);
             padding: 6rem 0 3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -53,7 +58,7 @@
         .research-title {
             font-weight: 700;
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .navbar {
@@ -77,19 +82,27 @@
             transform: translateY(-2px);
         }
         
+        /* Consistent section titles */
         .section-title {
             border-left: 5px solid var(--accent-color);
             padding-left: 15px;
-            margin: 2.5rem 0 1.5rem;
+            margin: 0 0 2rem;
             font-weight: 700;
         }
         
+        /* Consistent heading spacing */
+        h4, h5 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Consistent video containers */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
@@ -129,7 +142,7 @@
         }
         
         .author-info {
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
         }
         
@@ -175,6 +188,7 @@
             object-fit: cover;
         }
         
+        /* Consistent highlight boxes */
         .highlight-box {
             background-color: rgba(41, 98, 255, 0.1);
             border-left: 4px solid var(--accent-color);
@@ -186,7 +200,7 @@
         .process-step {
             padding: 2rem;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             background-color: var(--light-bg);
             position: relative;
         }
@@ -210,7 +224,7 @@
         
         .publication-card {
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             background-color: var(--light-bg);
             border-radius: 8px;
             border-left: 5px solid var(--accent-color);
@@ -245,14 +259,14 @@
         footer {
             background-color: var(--primary-color);
             color: rgba(255,255,255,0.8);
-            padding: 2rem 0;
-            margin-top: 3rem;
+            padding: 3rem 0;
+            margin-top: 4rem;
         }
         
         .footer-title {
             color: white;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .timeline {
@@ -364,15 +378,17 @@
             }
         }
 
+        /* Consistent list styling */
         .custom-list {
             list-style: none;
             padding-left: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .custom-list li {
             position: relative;
             padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .custom-list li::before {
@@ -386,17 +402,19 @@
             border-radius: 50%;
         }
 
+        /* Consistent image styling */
         .architecture-diagram {
             max-width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            margin-bottom: 1.5rem;
         }
 
         .code-block {
             background-color: #f8f9fa;
             border-radius: 8px;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             font-family: 'Fira Code', monospace;
             position: relative;
         }
@@ -413,7 +431,37 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Consistent row margins */
+        .row {
+            margin-bottom: 2rem;
+        }
+        
+        /* Caption styling */
+        .caption {
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Consistent padding for all content sections */
+        .content-section {
+            padding: 2rem 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .research-title {
+                font-size: 2rem;
+            }
+            
+            section {
+                margin-bottom: 3rem;
+            }
         }
     </style>
 </head>
@@ -422,7 +470,21 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">ICCO Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#approach">Approach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#results">Demonstrations</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -430,11 +492,19 @@
     <div class="header-section">
         <div class="container header-content">
             <div class="row align-items-center">
-                <div class="col-lg-8">
+                <div class="col-md-6">
                     <h1 class="research-title">ICCO: Learning an Instruction-conditioned Coordinator for Language-guided Task-aligned Multi-robot Control</h1>
+                    <p class="lead">A Multi-Agent Reinforcement Learning framework for language-guided and Task-aligned multi-robot systems</p>
+                    <div class="mt-4 d-flex">
+                        <a href="#overview" class="btn btn-light me-1">Learn More</a>
+                        <a href="#results" class="btn btn-outline-light mx-1">View Demos</a>
+                        <a href="https://arxiv.org/abs/2503.12122" class="btn btn-light ms-1" style="color: #dc3545; border-color: #dc3545;">arXiv</a>
+                    </div>
                 </div>
-                <div class="col-lg-4 d-none d-lg-block">
-                    <img src="imgs/frame.png" alt="ICCO System" class="img-fluid rounded shadow" style="border: 5px solid rgba(255,255,255,0.3); max-width: 120%;">
+                
+                <div class="col-md-6">
+                    <img src="imgs/frame.png" alt="ICCO System" class="img-fluid rounded shadow architecture-diagram">
+                    <p class="caption">ICCO Overview</p>
                 </div>
             </div>
         </div>
@@ -444,17 +514,170 @@
 <main>
     <div class="container">
         <!-- Overview Section -->
-        <section id="overview">
-            <h2 class="section-title">Demo Video</h2>
-            <p>We demonstrated that the proposed method (ICCO) successfully complies with instructions and accomplishes tasks when compared to the baseline method (QMIX(FULL)). Furthermore, we checked that the proposed method adapts to transitions between different instructions.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/H6hltaIGkAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section id="overview" class="content-section">
+            <h2 class="section-title">Research Overview</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Recent advances in Large Language Models (LLMs) have enabled language-guided multi-robot systems, allowing robots to execute tasks based on natural language instructions. However, achieving effective coordination in distributed multi-agent environments remains challenging due to two key issues:</p>
+                    
+                    <div class="highlight-box">
+                        <h5>Key Challenges</h5>
+                        <ul class="custom-list">
+                            <li><strong>Instruction-Task Misalignment:</strong> Natural language instructions may not perfectly align with the specific requirements of a task.</li>
+                            <li><strong>Behavioral Inconsistency:</strong> Independent interpretation of ambiguous instructions by multiple robots leads to inconsistent behaviors.</li>
+                        </ul>
+                    </div>
+                    
+                    <p>To address these challenges, we propose <strong>Instruction-Conditioned Coordinator (ICCO)</strong>, a Multi-Agent Reinforcement Learning (MARL) framework designed to enhance coordination in language-guided multi-robot systems.</p>
+                    
+                    <p>ICCO consists of a Coordinator agent and multiple Local Agents, where the Coordinator generates Task-Aligned and Consistent Instructions (TACI) by integrating language instructions with environmental states, ensuring task alignment and behavioral consistency.</p>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Hkt0sUTL30I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <p class="text-center text-muted">▲ Demonstration Video</p>
+        </section>
+        
+        <!-- Approach Section -->
+        <section id="approach" class="content-section">
+            <h2 class="section-title">Our Approach</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="imgs/archi.png" alt="ICCO Architecture" class="architecture-diagram img-fluid">
+                    <p class="caption">ICCO System Architecture</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>ICCO Architecture</h4>
+                    <p>The ICCO framework consists of two main components:</p>
+                    
+                    <ul class="custom-list">
+                        <li><strong>Coordinator Agent:</strong> Processes language instructions and environmental states to generate Task-Aligned and Consistent Instructions (TACI).</li>
+                        <li><strong>Local Agents:</strong> Individual robot controllers that execute actions based on the TACI received from the Coordinator.</li>
+                    </ul>
+                    
+                    <p>The Coordinator and Local Agents are jointly trained to optimize a reward function that balances task efficiency and instruction following. This approach ensures that robots not only complete their tasks efficiently but also adhere to human instructions in a coordinated manner.</p>
+                </div>
+                
+            </div>
+        </section>
+            
+            
+        <!-- Results & Demos Section -->
+        <section id="results" class="content-section">
+            <h2 class="section-title">Demonstrations</h2>
+            <span class="highlight"><h4>Demonstration Comparison</h4></span>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="custom-list">
+                        <li><h5>Baseline Method</h5>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/d4yqqT2EQJ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>The model understood the instruction but couldn't simultaneously follow the instruction while completing the tasks.</p>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="custom-list">
+                        <li><h5>ICCO Method</h5>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/eItaRgYanb0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>The model performed the tasks and followed the instruction. </p>
+                </div>
+            </div>
+            
+            <span class="highlight"><h4>ICCO Demonstrations in Sequence of 4 Instruction</h4></span>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="custom-list">
+                        <li><h5>1. First Instruction: "Go Right"</h5>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/3KWdzWs6dNs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>Agents located in the upper area prioritize invader defense, agents that spawned in the lower part of the environment prioritize resource collection, and agents on the right prioritize carrying out instructions.</p>                    
+                </div>
+                <div class="col-md-6">
+                    <ul class="custom-list">
+                        <li><h5>2. Second Instruction: "Move Top"</h5>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/jiCGcr-IuoY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>All robots are moving to the upper area, performing invader defense and other related tasks as they go.</p>                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="custom-list">
+                        <li><h5>3. Third Instruction: "Gather Center"</h5>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/h-Wet9zxHLM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>All robots are moving from the upper part of the environment toward the center, performing resource collection and invader defense as needed.</p>                    
+                </div>
+                <div class="col-md-6">
+                    <ul class="custom-list">
+                        <li><h5>4. Fourth Instruction: "Spread Out"</h5>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9hJH6ar6qAQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>All robots are moving away from the center in order to receive and carry out instructions.</p>                    
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h5>Key Findings</h5>
+                <p>Our demonstrations show that ICCO successfully addresses the challenges of instruction-task misalignment and behavioral inconsistency:</p>
+            </div>
+        
+            <h5>Complete Movement Sequence</h5>
+            <p>The video below shows the full sequence of ICCO coordinating multiple robots through 4 instructions in the environment.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/q_YDw0MkaGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </section>
     </div>
 </main>
-        
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="footer-title">NAIST RLLAB</h5>
+                <p>Robot Learning Laboratory<br>Division of Information Science<br>Graduate School of Science and Technology<br>Nara Institute of Science and Technology</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="footer-title">Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.naist.jp/en/" class="text-white-50">University Homepage</a></li>
+                    <li><a href="https://sites.google.com/view/naist-robot-learning-en?authuser=0" class="text-white-50">Robot Learning Lab</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="footer-title">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="https://x.com/naist_rl_lab" class="text-white-50 me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://www.youtube.com/channel/UCcZyqTbGPfumQ_QmQ-6haQw" class="text-white-50 me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+        <div class="text-center text-white-50">
+            <small>© 2025 NAIST Robot Learning Lab. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
